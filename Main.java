@@ -18,10 +18,23 @@ public class Main {
         System.out.println(name + " added.");
     }
 
+
     static void viewStudents() {
         System.out.println("Student List:");
         for (String s : students) {
             System.out.println(s);
         }
+    }
+}
+static void viewStudents() {
+    System.out.println("Student List:");
+
+    if (students.isEmpty()) {
+        System.out.println("No students found");
+        return;
+    }
+
+    for (String s : students) {
+        System.out.println(s);
     }
 }
