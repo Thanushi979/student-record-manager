@@ -11,6 +11,9 @@ public class Main {
         addStudent("Bob");
 
         viewStudents();
+        deleteStudent("Alice");
+        countStudents();
+        searchStudent("bob");
     }
 
     static void addStudent(String name) {
@@ -19,13 +22,8 @@ public class Main {
     }
 
 
-    static void viewStudents() {
-        System.out.println("Student List:");
-        for (String s : students) {
-            System.out.println(s);
-        }
-    }
-}
+    
+
 static void viewStudents() {
     System.out.println("Student List:");
 
@@ -38,3 +36,27 @@ static void viewStudents() {
         System.out.println(s);
     }
 }
+static void deleteStudent(String name) {
+    if (students.remove(name)) {
+        System.out.println(name + " removed.");
+    } else {
+        System.out.println("Student not found.");
+    }
+}
+static void countStudents() {
+    System.out.println("Total students: " + students.size());
+}
+static void searchStudent(String name) {
+    boolean found = false;
+
+    for (String s : students) {
+        if (s.equalsIgnoreCase(name)) {
+            System.out.println("Found: " + s);
+            found = true;
+        }
+    }
+
+    if (!found) {
+        System.out.println("Student not found");
+    }
+}}
